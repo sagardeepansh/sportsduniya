@@ -4,6 +4,9 @@ import { jwtVerify } from 'jose';
 export async function middleware(req) {
   const token = req.cookies.get('token')?.value;
   const url = req.nextUrl.clone();
+
+
+  // console.log('token', token)
   
   // Public routes that don't require authentication
   const publicRoutes = ['/login'];
